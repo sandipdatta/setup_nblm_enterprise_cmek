@@ -31,17 +31,8 @@ usage() {
     echo "This script is fully interactive. It will prompt you for all required information,"
     echo "including the Google Cloud Project ID, KMS Key Ring name, Key name,"
     echo "and whether to use HSM or Software protection."
-    echo ""
-    echo "NOTE: This script uses 'jq' for JSON parsing. Please ensure it is installed."
     exit 1
 }
-
-# --- Prerequisite Check ---
-# Check if jq is installed, as it was required by the original verification logic.
-if ! command -v jq &> /dev/null; then
-    error_log "'jq' is not installed, but it is a potential dependency."
-    error_log "Please install jq to prevent future issues. Example: sudo apt-get install jq OR brew install jq"
-fi
 
 # --- Interactive User Input ---
 log "Gathering configuration details..."
